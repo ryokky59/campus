@@ -1,0 +1,6 @@
+<%= @user.name %>
+
+<% @favorite_pictures.reverse.each do |favorites| %>
+  <p><%= favorites.image %></p>
+  <p><%= favorites.content %></p>
+<% end %>

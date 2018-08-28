@@ -1,0 +1,16 @@
+<h1>picture_index</h1>
+
+<%= link_to 'create', new_picture_path %>
+
+
+<p id="notice"><%= notice %></p>
+
+<% @pictures.reverse.each do |picture| %>
+  <p><%= picture.content %></p>
+
+
+  <%= link_to 'show', picture_path(picture.id) %>
+  <%= link_to 'edit', edit_picture_path(picture.id), data: {confirm: 'edit?'} %>
+  <%= link_to 'delete', picture_path(picture.id), method: :delete, data: {confirm: 'delete?'} %>
+<% end %>
+<hr/>
