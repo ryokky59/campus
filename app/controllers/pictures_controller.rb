@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
     if @picture.save
-      ContactMailer.picture_create_mail(@picture).deliver
+      #ContactMailer.picture_create_mail(@picture).deliver
       redirect_to pictures_path, notice: "create"
     else
       render 'new'
