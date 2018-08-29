@@ -7,7 +7,7 @@
     <%= f.hidden_field :image_cache %>
     <%= f.hidden_field :content %>
     <div class="confirm_image">
-      <%= image_tag(@picture.image) %>
+      <%= image_tag(@picture.image.url) %>
     </div>
     <div class="confirm_text">
       <%= @picture.content %>
@@ -19,5 +19,5 @@
     <%= f.hidden_field :image_cache %>
     <%= f.hidden_field :content %>
     <%= f.submit 'back', name: 'back', class: "btn btn-sm" %>
-  <% end %> 
+  <% end %>
 </div>
