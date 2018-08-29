@@ -3,24 +3,37 @@
   <head>
     <title>Montage</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to 'create', new_picture_path %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
+    <header>
+      <h1>CAMPUS</h1>
+    </header>
 
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    <nav class="container">
+      <ul>
+        <div class="header_link row">
+        <% if logged_in? %>
+          <li class="col-lg-3 col-sm-6 col-xs-12"><%= link_to "Profile", user_path(current_user.id) %></li>
+          <li class="col-lg-3 col-sm-6 col-xs-12"><%= link_to 'Create', new_picture_path %></li>
+          <li class="col-lg-3 col-sm-6 col-xs-12"><%= link_to 'List', pictures_path %></li>
+          <li class="col-lg-3 col-sm-6 col-xs-12"><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+        <% else %>
+          <li class="col-sm-6 col-xs-12"><%= link_to "Sign up", new_user_path %></li>
+          <li class="col-sm-6 col-xs-12"><%= link_to "Login", new_session_path %></li>
+        <% end %>
+      </div>
+      </ul>
+    </nav>
 
+    <article>
     <%= yield %>
+    </article>
+
+    <footer>
+      <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+    </footer>
+
   </body>
 </html>

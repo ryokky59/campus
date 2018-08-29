@@ -8,15 +8,15 @@
       <% end %>
     </div>
   <% end %>
-
-  <%= f.label :image %>
+<div class="form_content">
+<div class="form_image">
+  <%= f.label :image %><br>
   <%= f.file_field :image %>
-
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-
-  <%= f.submit 'create' %>
-
-  <%= link_to 'back', pictures_path %>
+</div>
+<div class="form_text">
+  <%= f.text_area :content,  placeholder: "本文を入力してください" %>
+</div>
+  <%= f.submit 'create', class: "btn btn-default" %>
 
 <% end %>
+</div>

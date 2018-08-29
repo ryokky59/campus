@@ -1,4 +1,6 @@
-<h1>Sign up</h1>
+<div class="signup_title">
+  <h1>CAMPUSへようこそ！</h1>
+</div>
 
 <% if @user.errors.any? %>
   <div id="user_error_explanation">
@@ -9,18 +11,31 @@
   </div>
 <% end %>
 
-<%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="container">
+  <div class="low">
+    <div class="signup_content col-xs-12 col-sm-6 col-md-offset-1">
+      <p>
+        CAMPUSは画像投稿アプリです。<br>
+        みなさんの画像を持ち寄って遊んでみてください。
+      </p>
+    </div>
+    <div class="signup_form col-xs-12 col-sm-4 col-md-offset-1">
+      <h2>Sign up</h2>
+      <%= form_with(model: @user, local: true) do |f| %>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+        <%= f.label :email %><br>
+        <%= f.email_field :email %><br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+        <%= f.label :password %><br>
+        <%= f.password_field :password %><br>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation %><br>
 
-  <%= f.submit "Create my account" %>
-<% end %>
+        <%= f.submit "Create my account" %>
+      <% end %>
+    </div>
+  </div>
+</div>

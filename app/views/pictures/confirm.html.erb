@@ -1,21 +1,23 @@
-<h1>confirm</h1>
+<div class="confirm_title">
+  <h1>confirm</h1>
+</div>
 
-<%= form_with(model: @picture, url: pictures_path, local: true) do |f| %>
-  <%= f.hidden_field :image_cache %>
-  <%= f.hidden_field :content %>
+<div class="confirm_content">
+  <%= form_with(model: @picture, url: pictures_path, local: true) do |f| %>
+    <%= f.hidden_field :image_cache %>
+    <%= f.hidden_field :content %>
+    <div class="confirm_image">
+      <%= image_tag(@picture.image) %>
+    </div>
+    <div class="confirm_text">
+      <%= @picture.content %>
+    </div>
+    <%= f.submit 'create', class: "btn btn-default" %>
+  <% end %>
 
-  <%= image_tag(@picture.image) %>
-  <%= @picture.content %>
-
-  <%= f.submit 'create' %>
-
-<% end %>
-
-<%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |f| %>
-  <%= f.hidden_field :image_cache %>
-  <%= f.hidden_field :content %>
-  <%= f.hidden_field :image_cache %>
-
-  <%= f.submit 'back' %>
-
-<% end %>
+  <%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |f| %>
+    <%= f.hidden_field :image_cache %>
+    <%= f.hidden_field :content %>
+    <%= f.submit 'back', name: 'back', class: "btn btn-sm" %>
+  <% end %> 
+</div>

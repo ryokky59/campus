@@ -1,16 +1,21 @@
-<h1>picture_index</h1>
+<div class="list_content">
+  <div class="container">
+    <div class="row">
+      <% @results.each do |result| %>
+        <div class="list_image col-lg-4 col-sm-6 col-xs-12">
+  	       <%= link_to image_tag(result.image), picture_path(result.id) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<%= link_to 'create', new_picture_path %>
-
-
-<p id="notice"><%= notice %></p>
-
-<% @pictures.reverse.each do |picture| %>
-  <p><%= picture.content %></p>
-
-
-  <%= link_to 'show', picture_path(picture.id) %>
-  <%= link_to 'edit', edit_picture_path(picture.id), data: {confirm: 'edit?'} %>
-  <%= link_to 'delete', picture_path(picture.id), method: :delete, data: {confirm: 'delete?'} %>
-<% end %>
-<hr/>
+  <div class="list_page">
+    <% if @page > 0 then %>
+      <a href="/pictures?page=<%=@page - 1 %>" class="btn btn-default"><%=@page %></a>
+    <% end %>
+    <p><%=(@page + 1)%></p>
+    <% if @record_count > (@page + 1) * @page_num %>
+      <a href="/pictures?page=<%=@page + 1 %>" class="btn btn-default"><%=@page + 2 %></a>
+    <% end %>
+  </div>
+</div>

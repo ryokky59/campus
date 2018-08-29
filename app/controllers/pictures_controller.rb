@@ -3,7 +3,12 @@ class PicturesController < ApplicationController
   before_action :require_logged_in!, only: [:new, :edit, :show, :destroy]
 
   def index
-    @pictures = Picture.all
+    @page = params[:page].to_i
+    @page = 0 if @page == nil
+    @page_num = 6
+    @record_count = Picture.where("id > 0").count
+    @results = Picture.where("id > 0").order("id DESC")
+                       .offset(@page * @page_num).limit(@page_num)
   end
 
   def new

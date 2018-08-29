@@ -1,3 +1,120 @@
-// Place all the styles related to the picture controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//pictures/index.html.erb
+.list_content {
+  text-align: center;
+}
+
+.list_content .container {
+  margin: auto;
+}
+
+.list_image {
+  width: 350px;
+  height: 350px;
+}
+
+.list_page p {
+  display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+//pictures/_form.html.erb
+#picture_error_explanation {
+  text-align: center;
+}
+
+#picture_error_explanation p {
+  color: red;
+}
+
+.form_content {
+  text-align: center;
+}
+
+.form_image {
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.form_text {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.form_text textarea {
+  width: 285px;
+  height: 150px;
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
+
+//pictures/create.html.erb
+.create_title h1 {
+  letter-spacing: 10px;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+//pictures/confirm.html.erb
+.confirm_title h1 {
+  letter-spacing: 10px;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.confirm_content {
+  text-align: center;
+}
+
+.confirm_image {
+  margin-bottom: 50px;
+}
+
+.confirm_text {
+  font-size: 2rem;
+  letter-spacing: 5px;
+  margin-bottom: 70px;
+}
+
+.confirm_content .btn-sm {
+  color: white;
+  background-color: dimgray;
+  margin-top: 40px;
+}
+
+//pictures/show.html.erb
+.show_content {
+  text-align: center;
+}
+
+.show_title h1 {
+  letter-spacing: 10px;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.show_image {
+  padding: 50px;
+}
+
+.show_text {
+  font-size: 2rem;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+}
+
+.show_name p {
+  padding-bottom: 30px;
+}
